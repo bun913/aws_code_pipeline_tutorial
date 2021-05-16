@@ -113,5 +113,15 @@ sudo ./install auto
 
 ## ソース変更の検知を確認
 1. ローカル環境でソースを変更する
-2. 
+2. `git checkout -b fix/test_re_deploy` を実行
+3. `git add . ` `git commit -m 'テストのため文言変更` `git push origin HEAD` を実行
+4. CodeCommitでプルリクエストを作成
+![PR作成](images/13_create_pr.png)
+5. 作成したPRをマージする
+![PRマージ](images/14_merge_pr.png)
+6. コードパイプラインの履歴を確認
+![パイプラインの履歴確認](./images/15_check_pipeline.png)
+7. パイプラインが成功していることを確認し、ブラウザからアプリケーションを確認する。以下のように変更が反映されていればOK
+![アプリケーションのデプロイ確認](./images/16_check_app.png)
+8. 最後に今まで作成したリソースを消し忘れないように注意
 
